@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento - Society FC</title>
+  <link rel="stylesheet" href="style-completo.css">
+</head>
+<body id="agendamento-page">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Society FC</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="precos.html">Preços</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="contato.html">Contato</a>
+      <a href="agendamento.html" class="active">Agendamento</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="theme-toggle" class="btn-theme">🌙</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="content">
+    <h2>Agende sua Quadra</h2>
+    <div class="agendamento-container">
+      <form id="agendamentoForm" class="agendamento-form">
+        <input type="text" id="anome" placeholder="Seu nome" required>
+        <input type="email" id="aemail" placeholder="Seu e-mail" required>
+        <input type="tel" id="atelefone" placeholder="Telefone" required>
+        <input type="date" id="adata" required>
+        <input type="time" id="ahora" required>
+        <select id="aquadra" required>
+          <option value="">Escolha a quadra</option>
+          <option value="quadra1">Quadra 1</option>
+          <option value="quadra2">Quadra 2</option>
+        </select>
+        <select id="apagamento" required>
+          <option value="">Forma de pagamento</option>
+          <option value="pix">PIX</option>
+          <option value="cartao">Cartão</option>
+          <option value="dinheiro">Dinheiro</option>
+        </select>
+
+        <!-- PIX QR Code -->
+        <div id="pix-qrcode" class="pix-qrcode"></div>
+
+        <!-- CARTÃO -->
+        <div id="card-container" class="card-container">
+          <div class="card-preview">
+            <div class="card-number" id="display-number">#### #### #### ####</div>
+            <div class="card-name" id="display-name">NOME DO TITULAR</div>
+            <div class="card-expiry" id="display-expiry">MM/AA</div>
+          </div>
+          <input type="text" id="card-number" placeholder="Número do cartão">
+          <input type="text" id="card-name" placeholder="Nome do titular">
+          <input type="text" id="card-expiry" placeholder="Validade (MM/AA)">
+        </div>
+
+        <button type="submit" class="btn">Confirmar Agendamento</button>
+        <p id="aresp" class="resposta"></p>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Society FC</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script-agendamento.js"></script>
+</body>
+</html>

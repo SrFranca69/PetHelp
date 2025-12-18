@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIX - Society FC</title>
+  <link rel="stylesheet" href="style-completo.css">
+  <style>
+    body, html {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #f9f9f9;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark { background: #121212; color: #eee; }
+    h1 { margin-bottom: 1rem; color: #1e90ff; }
+    #pix-qrcode { width: 250px; height: 250px; margin-bottom: 1rem; }
+    p { font-size: 1.1rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Escaneie o PIX</h1>
+  <div id="pix-qrcode"></div>
+  <p>Use seu aplicativo bancário para pagar.</p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    // Dark mode persistente
+    if(localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark");
+    }
+
+    // Dados do agendamento
+    const pixData = JSON.parse(localStorage.getItem("pixData") || '{}');
+
+    // QR Code PIX
+    const pixQRCode = new QRCode(document.getElementById("pix-qrcode"), {
+      text: "00020126580014BR.GOV.BCB.PIX0136seupixkey5204000053039865405100.005802BR5925Society FC6009Cidade SP6108054090006304B14F",
+      width: 250,
+      height: 250,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>

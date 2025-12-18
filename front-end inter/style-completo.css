@@ -1,0 +1,833 @@
+/* ==============================
+   RESET & BASE
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ==============================
+   HEADER & NAV
+============================== */
+header {
+  background: #1e90ff;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.8rem;
+  font-weight: 500;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ffe600;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-theme {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #1e90ff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============================
+   MAIN / PRICES
+============================== */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.price-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.price-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.price-card p {
+  margin-bottom: 0.8rem;
+}
+
+.price-card .price {
+  font-weight: bold;
+  color: #1e90ff;
+  font-size: 1.1rem;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+  background: #1e90ff;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* ==============================
+   DARK MODE
+============================== */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark header {
+  background: #0c64c1;
+}
+
+body.dark .price-card {
+  background: #222;
+  color: #eee;
+}
+
+body.dark .price-card .price {
+  color: #2196f3;
+}
+
+body.dark .btn-theme {
+  background: #333;
+  color: #fff;
+}
+
+/* ==============================
+   GALERIA
+============================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.intro {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+body.dark .gallery-item {
+  box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+}
+
+body.dark .intro {
+  color: #ccc;
+}
+
+
+/* ==============================
+   CONTATO
+============================== */
+.contact-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-section .intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* INFO DE CONTATO */
+.contact-info {
+  flex: 1 1 250px;
+  background: #1e90ff;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.contact-info h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.contact-info .icon {
+  margin-right: 0.5rem;
+}
+
+/* FORMULÁRIO */
+.contact-form {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+
+.contact-form button {
+  padding: 0.6rem;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #0c7cd5;
+}
+
+/* RESPOSTA */
+.resposta {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* DARK MODE */
+body.dark .contact-info {
+  background: #0c64c1;
+}
+
+body.dark .contact-form {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark .contact-form button {
+  background: #2196f3;
+}
+
+/* ==============================
+   AGENDAMENTO
+============================== */
+.agendamento-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.agendamento-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.agendamento-form input,
+.agendamento-form select {
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.agendamento-form input:focus,
+.agendamento-form select:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+
+/* BOTÃO */
+.agendamento-form .btn {
+  padding: 0.6rem;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.agendamento-form .btn:hover {
+  background: #0c7cd5;
+}
+
+/* PIX QR CODE */
+.pix-qrcode {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* CARTÃO */
+.card-container {
+  display: none;
+  margin-top: 1rem;
+}
+
+.card-preview {
+  background: #1e90ff;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.card-preview div {
+  margin: 0.3rem 0;
+}
+
+/* RESPOSTA */
+.resposta {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  .agendamento-container {
+    padding: 0 0.5rem;
+  }
+}
+
+/* DARK MODE */
+body.dark .agendamento-form {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark input,
+body.dark select {
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark .agendamento-form .btn {
+  background: #2196f3;
+}
+
+body.dark .card-preview {
+  background: #0c64c1;
+}
+
+/* ==============================
+   AGENDAMENTO - AJUSTES
+============================== */
+.agendamento-container {
+  max-width: 800px;      /* limita a largura da área do formulário */
+  margin: 2rem auto;     /* centraliza horizontalmente e dá espaçamento vertical */
+  padding: 1.5rem;       /* espaçamento interno */
+  background: #fff;       /* mantém visual uniforme com outras páginas */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+main.content {
+  padding: 2rem 1rem;
+}
+
+/* PIX QR CODE */
+.pix-qrcode {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* CARTÃO */
+.card-container {
+  display: none;        /* aparece só quando o usuário seleciona Cartão */
+  margin-top: 1rem;
+}
+
+.card-preview {
+  background: #1e90ff;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.card-preview div {
+  margin: 0.3rem 0;
+}
+
+/* BOTÃO */
+.agendamento-form .btn {
+  padding: 0.6rem;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.agendamento-form .btn:hover {
+  background: #0c7cd5;
+}
+
+/* RESPOSTA */
+.resposta {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* ==============================
+   RESET & BASE
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ==============================
+   HEADER & NAV
+============================== */
+header {
+  background: #1e90ff;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.8rem;
+  font-weight: 500;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ffe600;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-theme {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #1e90ff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============================
+   MAIN / FORMULÁRIO
+============================== */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.agendamento-container {
+  display: flex;
+  justify-content: center;
+}
+
+.agendamento-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.agendamento-form input,
+.agendamento-form select {
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.agendamento-form input:focus,
+.agendamento-form select:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+
+/* BOTÃO */
+.btn {
+  padding: 0.6rem;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0c7cd5;
+}
+
+/* ==============================
+   PIX QR CODE
+============================== */
+#pix-qrcode {
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+  background: none;
+  padding: 0;
+  width: fit-content;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#pix-qrcode canvas {
+  display: block;
+  margin: auto;
+}
+
+/* ==============================
+   CARTÃO
+============================== */
+.card-container {
+  display: none; /* só aparece se cartão selecionado */
+  margin-top: 1rem;
+}
+
+.card-preview {
+  background: #1e90ff;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.card-preview div {
+  margin: 0.3rem 0;
+}
+
+/* RESPOSTA */
+.resposta {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+  background: #1e90ff;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* ==============================
+   DARK MODE
+============================== */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark header {
+  background: #0c64c1;
+}
+
+body.dark .agendamento-form {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark input,
+body.dark select {
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark .btn {
+  background: #2196f3;
+  color: #fff;
+}
+
+body.dark .card-preview {
+  background: #0c64c1;
+}
+
+/* ==============================
+   AGENDAMENTO - PIX E CARTÃO
+============================== */
+.agendamento-container {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.agendamento-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.agendamento-form input,
+.agendamento-form select,
+.agendamento-form textarea {
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.agendamento-form input:focus,
+.agendamento-form select:focus,
+.agendamento-form textarea:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+
+.btn {
+  padding: 0.6rem;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0c7cd5;
+}
+
+/* PIX QR CODE */
+#pix-qrcode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#pix-qrcode canvas {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+#pix-timer {
+  margin-top: 0.8rem;
+  font-weight: bold;
+  color: #ff4d4d;
+}
+
+/* CARTÃO */
+#card-container {
+  margin-top: 1rem;
+}
+
+.card-preview {
+  background: #1e90ff;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* RESPOSTA */
+.resposta {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}
+
+/* ==============================
+   DARK MODE
+============================== */
+body.dark .agendamento-form,
+body.dark #pix-qrcode,
+body.dark #card-container {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark .btn {
+  background: #2196f3;
+  color: #fff;
+}
+
+body.dark .card-preview {
+  background: #0c64c1;
+}
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Society FC</title>
+  <link rel="stylesheet" href="style-completo.css">
+  <style>
+    /* ===== ÍCONE WHATSAPP FIXO ===== */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+    }
+
+    .whatsapp-btn img {
+      width: 36px;
+      height: 36px;
+    }
+  </style>
+</head>
+<body id="contato-page">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Society FC</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="precos.html">Preços</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="contato.html" class="active">Contato</a>
+      <a href="agendamento.html">Agendamento</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="theme-toggle" class="btn-theme" aria-label="Alternar tema">🌙</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="content">
+    <section class="contact-section">
+      <h2>Fale Conosco</h2>
+      <p class="intro">
+        Estamos prontos para ouvir você! Preencha o formulário abaixo ou utilize nossas informações de contato.
+      </p>
+
+      <div class="contact-wrapper">
+        <!-- Contato Informativo com ícones -->
+        <div class="contact-info">
+          <h3>Informações de Contato</h3>
+          <p><span class="icon">📍</span> <strong>Endereço:</strong> Rua do Futebol, 123, Cidade</p>
+          <p><span class="icon">📞</span> <strong>Telefone:</strong> (11) 99999-9999</p>
+          <p><span class="icon">✉️</span> <strong>E-mail:</strong> contato@societyfc.com</p>
+          <p><span class="icon">⏰</span> <strong>Horário de atendimento:</strong> Seg-Sex 08h-23h | Sáb-Dom 08h-20h</p>
+        </div>
+
+        <!-- Formulário -->
+        <form id="contactForm" class="contact-form">
+          <label for="cname" class="sr-only">Seu nome</label>
+          <input type="text" id="cname" placeholder="Seu nome" required>
+
+          <label for="cemail" class="sr-only">Seu e-mail</label>
+          <input type="email" id="cemail" placeholder="Seu e-mail" required>
+
+          <label for="cmsg" class="sr-only">Sua mensagem</label>
+          <textarea id="cmsg" placeholder="Sua mensagem" required></textarea>
+
+          <button type="submit" class="btn">Enviar Mensagem</button>
+          <p id="cmsg-res" class="resposta"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Society FC — Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- ÍCONE WHATSAPP -->
+  <a href="https://wa.me/5581981195013?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20alugar%20a%20quadra%20%F0%9F%8F%BC"
+     class="whatsapp-btn"
+     target="_blank"
+     aria-label="Conversar no WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- SCRIPT EXTERNO -->
+  <script src="script-agendamento.js"></script>
+
+</body>
+</html>
